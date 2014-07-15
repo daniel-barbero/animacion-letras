@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>News OK</title>
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+
+	<div id="caracteres">
+		<div id="nombre">
+			<p id="d">D</p> 
+			<p id="a">A</p> 
+			<p id="n">N</p> 
+			<p id="i">I</p> 
+			<p id="e">E</p> 
+			<p id="l" class="amarillo">L</p>
+		</div>
+		<div id="apellido">
+			<p id="apb1" class="amarillo">B</p> 
+			<p id="apa">A</p> 
+			<p id="apr1" class="amarillo">R</p> 
+			<p id="apb2">B</p> 
+			<p id="ape">E</p> 
+			<p id="apr2">R</p> 
+			<p id="apo">O</p>
+		</div>
+	</div>
+
+	<img id="logo" src="logo2.png" alt="logo_daniel_barbero" />
+	<div id="base"></div>  
+	<div id="texto">
+		<p id="primera_linea">Muchas gracias por tu suscripción.</p>
+		<p id="segunda_linea">En breve recibirás las últimas noticias en tendencias y diseño.</p>	 
+		<p id="tercera_linea">Disfrútalas</p>
+	</div>
+
+	<a href="signature.htm"><span>Volver</span></a>
+
+	<div id="linea1" class="linea"></div>
+	<div id="linea2" class="linea"></div>
+	<div id="linea3" class="linea"></div>
+
+	<script type="text/javascript">
+            var caja = document.getElementById("base");
+            var div = caja.getElementsByTagName("div");
+
+            // creacion de div 
+            for (var n = 1; n <=204; n++) {
+            var new_li = document.createElement("div");
+   
+            new_li.setAttribute("id" , "new_div"+n);
+            document.getElementById("base").appendChild(new_li);
+            }	
+
+
+            function explosion() {
+
+            // desplazamiento
+                for (var i = 0; i < div.length; i++) {
+                    var positionTop = Math.floor((Math.random()*600)-300);
+                    var positionLeft = Math.floor((Math.random()*1200)-600);
+                    console.log(positionTop,positionLeft)
+                    div[i].style.top=positionTop+"px";
+                    div[i].style.left=positionLeft+"px";
+                }
+           
+            }
+            
+           setTimeout (explosion, 50000);
+	</script>
+</body>
+</html>
